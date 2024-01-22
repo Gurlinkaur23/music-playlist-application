@@ -60,11 +60,13 @@ namespace LabAssignment_05
         {
             if (queuePlaylist.Count > 1)
             {
+                // Removing and getting the first song from the queue and adding it back to preserve the song.
                 string currentSong = queuePlaylist.Dequeue();
                 queuePlaylist.Enqueue(currentSong);
 
                 Console.WriteLine($"Now playing: {currentSong}");
                 Console.WriteLine($"Next song: {queuePlaylist.Peek()}");
+
             }
             else if (queuePlaylist.Count == 1)
             {
@@ -84,10 +86,12 @@ namespace LabAssignment_05
         {
             if (queuePlaylist.Count > 1)
             {
+                // Removing and getting the first song from the queue and adding it back to preserve the song.
                 string currentSong = queuePlaylist.Dequeue();
                 queuePlaylist.Enqueue(currentSong);
                 Console.WriteLine($"Now playing: {currentSong}");
 
+                // Removing and getting the next song from the queue and adding it back to preserve the song.
                 string skippedSong = queuePlaylist.Dequeue();
                 queuePlaylist.Enqueue(skippedSong);
                 Console.WriteLine($"Skipped song: {skippedSong}");
@@ -146,6 +150,5 @@ namespace LabAssignment_05
                 Console.WriteLine("There is no song to rewind to");
             }
         }
-
     }
 }
